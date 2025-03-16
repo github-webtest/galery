@@ -5,7 +5,7 @@ document.getElementById("addImageBtn").addEventListener("click", function() {
 document.getElementById("submitImageUrl").addEventListener("click", function() {
     const imageUrl = document.getElementById("imageUrlInput").value.trim();
 
-    if (!localStorage.getItem("numbers"))}
+    if (!localStorage.getItem("numbers")){
 
     localStorage.setItem("numbers", 1);
     

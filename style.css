@@ -17,11 +17,23 @@ button {
     font-size: 18px;
     cursor: pointer;
     border-radius: 5px;
-    margin-bottom: 20px;
+    margin: 10px;
 }
 
 button:hover {
     background-color: #45a049;
+}
+
+#urlInputContainer {
+    margin-bottom: 20px;
+}
+
+input {
+    padding: 10px;
+    width: 250px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 5px;
 }
 
 .gallery {

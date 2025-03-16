@@ -1,18 +1,19 @@
 document.getElementById("addImageBtn").addEventListener("click", function() {
-    document.getElementById("imageInput").click();
+    document.getElementById("urlInputContainer").style.display = "block";
 });
 
-document.getElementById("imageInput").addEventListener("change", function(event) {
-    const file = event.target.files[0];
-    if (file) {
-        const reader = new FileReader();
-        reader.onload = function(e) {
-            const img = document.createElement("img");
-            img.src = e.target.result;
-            img.onclick = function() { openModal(img) };
-            document.getElementById("gallery").appendChild(img);
+document.getElementById("submitImageUrl").addEventListener("click", function() {
+    const imageUrl = document.getElementById("imageUrlInput").value.trim();
+    if (imageUrl) {
+        const img = document.createElement("img");
+        img.src = imageUrl;
+        img.onerror = function() {
+            alert("Geçersiz resim URL'si!");
         };
-        reader.readAsDataURL(file);
+        img.onclick = function() { openModal(img) };
+        document.getElementById("gallery").appendChild(img);
+        document.getElementById("imageUrlInput").value = ""; 
+        document.getElementById("urlInputContainer").style.display = "none";
     }
 });
 

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resim Galerisi</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <h1>Resim Galerisi</h1>
+
+    <button id="addImageBtn">+ Resim Ekle</button>
+    <input type="file" id="imageInput" accept="image/*" style="display: none;">
+
+    <div class="gallery" id="gallery">
+    </div>
+    
+    <div id="imageModal" class="modal" onclick="closeModal()">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modalImage">
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

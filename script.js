@@ -4,24 +4,38 @@ document.getElementById("addImageBtn").addEventListener("click", function() {
 
 document.getElementById("submitImageUrl").addEventListener("click", function() {
     const imageUrl = document.getElementById("imageUrlInput").value.trim();
-    if (imageUrl) {
-        const img = document.createElement("img");
-        img.src = imageUrl;
-        img.onerror = function() {
-            alert("Geçersiz resim URL'si!");
-        };
-        img.onclick = function() { openModal(img) };
-        document.getElementById("gallery").appendChild(img);
+
+    if (!localStorage.getItem("numbers"))}
+
+    localStorage.setItem("numbers", 1);
+    
+    } else {
+
+        localStorage.setItem("img_urls_" + Number(localStorage.getItem("numbers")), imageUrl);
+        localStorage.setItem("numbers", Math.floor(Number(localStorage.getItem("numbers")) + 1));
+        
         document.getElementById("imageUrlInput").value = ""; 
         document.getElementById("urlInputContainer").style.display = "none";
     }
 });
 
-function openModal(img) {
-    document.getElementById("imageModal").style.display = "block";
-    document.getElementById("modalImage").src = img.src;
-}
+function save() {
 
-function closeModal() {
-    document.getElementById("imageModal").style.display = "none";
+    var run_number = 0;
+
+        setInterval(function() {
+
+            if (localStorage.getItem("img_urls_" + Number(run_number)) != null) {
+
+            const img = document.createElement("img");
+            img.src = localStorage.getItem("img_urls_" + Number(run_number));
+            document.getElementById("gallery").appendChild(img);
+
+                
+
+            }
+
+            run_number++;
+        
+    }, 10);
 }

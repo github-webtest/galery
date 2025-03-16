@@ -3,15 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resim Galerisi</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body onload="save()">
+<body>
 
-    <button id="addImageBtn">+</button>
+    <h1>Resim Galerisi</h1>
+
+    <button id="addImageBtn">+ Resim Ekle</button>
+    <div id="urlInputContainer" style="display: none;">
+        <input type="text" id="imageUrlInput" placeholder="Resim URL'sini girin">
+        <button id="submitImageUrl">Ekle</button>
+    </div>
 
     <div class="gallery" id="gallery">
+        <!-- Resimler buraya eklenecek -->
     </div>
-    
+
+    <!-- Modal - Büyük Resim Görüntüleme -->
     <div id="imageModal" class="modal" onclick="closeModal()">
         <span class="close">&times;</span>
         <img class="modal-content" id="modalImage">
